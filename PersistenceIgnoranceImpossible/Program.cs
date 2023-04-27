@@ -56,7 +56,7 @@ var itemGuid2 = new OrderItemGuid
     Id = Guid.NewGuid(),
     Count = 10
 };
-orderGuid.AddItem(itemGuid2, () => context.Entry(itemGuid2).State = EntityState.Added);
+orderGuid.AddItem(itemGuid2, () => context.Add(itemGuid2));
 context.SaveChanges();
 
 orderGuid.Items.Clear();
