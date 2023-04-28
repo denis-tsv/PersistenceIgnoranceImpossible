@@ -59,5 +59,13 @@ var itemGuid2 = new OrderItemGuid
 orderGuid.AddItem(itemGuid2, () => context.Add(itemGuid2));
 context.SaveChanges();
 
+var itemGuid3 = new OrderItemGuid
+{
+    Id = Guid.Empty, //OK
+    Count = 10
+};
+orderGuid.AddItem(itemGuid3);
+context.SaveChanges();
+
 orderGuid.Items.Clear();
 context.SaveChanges();
